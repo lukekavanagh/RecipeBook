@@ -11,7 +11,8 @@ namespace RecipeBook.Models
         public string Title { get; set; }
         public string Content { get; set; }
         public string ImageLink { get; set; }
+        public int Points { get; set; }
         public virtual ApplicationUser PostedBy { get; set; }
-        public virtual int CategoryId { get; set; }
+        public virtual string CategoryName { get; set; }
     }
 }
