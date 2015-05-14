@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -16,6 +17,10 @@ namespace RecipeBook.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public string Name { get; set; }
+        public virtual List<Recipe> Recipes { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -29,5 +34,9 @@ namespace RecipeBook.Models
         {
             return new ApplicationDbContext();
         }
+
+        public virtual DbSet<Recipe> Recipes { get; set; }
+        public virtual DbSet<Category> Categories { get; set; } 
+
     }
 }
