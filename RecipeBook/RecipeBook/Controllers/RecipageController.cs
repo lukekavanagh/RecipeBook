@@ -3,40 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using RecipeBook.Models;
 
 namespace RecipeBook.Controllers
 {
-    public class PersonalHubController : Controller
+    public class RecipageController : Controller
     {
-        // GET: PersonalHub
+        // GET: Recipage
         public ActionResult Index()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                ApplicationDbContext Db = new ApplicationDbContext();
-
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            return View();
         }
 
-        // GET: PersonalHub/Details/5
+        // GET: Recipage/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: PersonalHub/Create
+        // GET: Recipage/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: PersonalHub/Create
+        // POST: Recipage/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -52,13 +42,13 @@ namespace RecipeBook.Controllers
             }
         }
 
-        // GET: PersonalHub/Edit/5
+        // GET: Recipage/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: PersonalHub/Edit/5
+        // POST: Recipage/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -74,13 +64,13 @@ namespace RecipeBook.Controllers
             }
         }
 
-        // GET: PersonalHub/Delete/5
+        // GET: Recipage/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: PersonalHub/Delete/5
+        // POST: Recipage/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

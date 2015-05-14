@@ -161,7 +161,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PersonalHubController.cs" />
+    <Compile Include="Controllers\RecipageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,6 +172,10 @@
     <Compile Include="Migrations\201505140319437_addedpointsandimagelinktomodels.cs" />
     <Compile Include="Migrations\201505140319437_addedpointsandimagelinktomodels.Designer.cs">
       <DependentUpon>201505140319437_addedpointsandimagelinktomodels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505140353366_changedkey.cs" />
+    <Compile Include="Migrations\201505140353366_changedkey.Designer.cs">
+      <DependentUpon>201505140353366_changedkey.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -242,6 +246,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\PersonalHub\" />
+    <Folder Include="Views\Recipage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -256,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505140319437_addedpointsandimagelinktomodels.resx">
       <DependentUpon>201505140319437_addedpointsandimagelinktomodels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505140353366_changedkey.resx">
+      <DependentUpon>201505140353366_changedkey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
