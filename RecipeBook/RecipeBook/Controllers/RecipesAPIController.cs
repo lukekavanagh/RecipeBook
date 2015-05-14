@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using Microsoft.Ajax.Utilities;
 using RecipeBook.Models;
 
 namespace RecipeBook.Controllers
 {
-    public class RecipesAPIController : ApiController
+    public class RecipesApiController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -110,9 +112,23 @@ namespace RecipeBook.Controllers
             base.Dispose(disposing);
         }
 
+        [HttpGet]
         private bool RecipeExists(int id)
         {
             return db.Recipes.Count(e => e.Id == id) > 0;
         }
+
+        // GET: api/RecipesAPI/UpVote/5
+        [HttpGet]
+        public int UpVote(int Id)
+        {
+            var Recipe = db.Recipes.Single(x => x.Id == Id);
+            var points = Recipe.Points;
+            Recipe.Points++;
+            db.Recipes.AddOrUpdate(Recipe);
+            db.SaveChanges();
+            return points;
+        }
     }
+   
 }

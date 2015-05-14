@@ -124,7 +124,7 @@ namespace RecipeBook.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult Index(string searchBy, string search)
+        public ActionResult Search(string searchBy, string search)
         {
             if (searchBy == "Recipes")
             {
@@ -136,10 +136,6 @@ namespace RecipeBook.Controllers
             }
         }
 
-        public ActionResult UpVote(int )
-        {
-            
-        }
 
     }
 }

@@ -36,6 +36,8 @@ namespace RecipeBook.Migrations
                 new Category { CategoryName = "Drinks" },
                 new Category { CategoryName = "Breakfast" }
                 );
+
+            context.SaveChanges();
             
             context.Recipes.AddOrUpdate(
                 r => r.Title,
