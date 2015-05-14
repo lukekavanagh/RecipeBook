@@ -9,6 +9,8 @@ namespace RecipeBook.Models
     {
         public int Id { get; set; }
         public string CategoryName { get; set; }
+        public string ImageLink { get; set; }
         public virtual List<Recipe> Recipes { get; set; }
+        
     }
 }
