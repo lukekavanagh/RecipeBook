@@ -123,5 +123,23 @@ namespace RecipeBook.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Index(string searchBy, string search)
+        {
+            if (searchBy == "Recipes")
+            {
+                return View(db.Recipes.Where(x => x.Title == search || search == null).ToList());
+            }
+            else
+            {
+                return View(db.Recipes.Where(x => x.Content.Contains(search) || search == null).ToList());
+            }
+        }
+
+        public ActionResult UpVote(int )
+        {
+            
+        }
+
     }
 }
