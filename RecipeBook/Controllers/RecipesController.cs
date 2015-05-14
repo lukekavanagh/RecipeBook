@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Mvc;
 using RecipeBook.Models;
 
 namespace RecipeBook.Controllers
@@ -119,6 +121,31 @@ namespace RecipeBook.Controllers
         private bool RecipeExists(int id)
         {
             return db.Recipes.Count(e => e.Id == id) > 0;
+        }
+
+        // GET: api/RecipesAPI/UpVote/5
+        [System.Web.Http.HttpGet] 
+        public int UpVote(int Id)
+        {
+            var Recipe = db.Recipes.Single(x => x.Id == Id);
+            var points = Recipe.Points;
+            Recipe.Points++;
+            db.Recipes.AddOrUpdate(Recipe);
+            db.SaveChanges();
+            return points;
+        }
+
+        public ActionResult Search(string searchBy, string search)
+        {
+            if (searchBy == "Recipes")
+            {
+                return View(db.Recipes.Where(x => x.Name == search || search == null).ToList());
+            }
+            else
+            {
+                return View(db.Recipes.Where(x => x.Content.Contains(search) || search == null).ToList());
+            }
+
         }
     }
 }
