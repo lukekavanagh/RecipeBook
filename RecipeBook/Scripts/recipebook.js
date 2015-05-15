@@ -20,7 +20,8 @@ $(document).ready(function() {
             $('#recipeList')
                 .append('<a class="recipe" href="recipes/' +
                     recipe["Id"] + '">' +
-                    recipe["Name"] + '</a>');
+                    recipe["Name"] + '  (' +
+                    recipe["Points"] + ')' + '</a>');
         });
     });
 
