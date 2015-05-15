@@ -52,7 +52,7 @@ a.category:hover {
 }
 
 a.recipe {
-    display: block;
+    display: inline-block;
     text-align: center;
     background-color: #337ab7;
     color: white;
@@ -62,10 +62,46 @@ a.recipe {
     padding-top: 2px;
     padding-bottom: 2px;
     border: 1px solid #cccccc;
+    width: 70%;
 }
 
 a.recipe:hover {
     background-color: #245580;
+}
+
+a.upvote {
+    display: inline-block;
+    text-align: center;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid #cccccc;
+    width: 15%;
+}
+a.upvote:hover {
+    background-color: greenyellow;    
+}
+
+a.downvote {
+    display: inline-block;
+    text-align: center;
+    background-color: #ffa153;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid #cccccc;
+    width: 15%;
+}
+
+a.downvote:hover {
+    background-color: greenyellow;
 }
 
 .jumbotron {
