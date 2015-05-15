@@ -135,17 +135,17 @@ namespace RecipeBook.Controllers
             return points;
         }
 
-        public ActionResult Search(string searchBy, string search)
-        {
-            if (searchBy == "Recipes")
-            {
-                return View(db.Recipes.Where(x => x.Name == search || search == null).ToList());
-            }
-            else
-            {
-                return View(db.Recipes.Where(x => x.Content.Contains(search) || search == null).ToList());
-            }
+        //public ActionResult Search(string searchBy, string search)
+        //{
+        //    if (searchBy == "Recipes")
+        //    {
+        //        return View(db.Recipes.Where(x => x.Name == search || search == null).ToList());
+        //    }
+        //    else
+        //    {
+        //        return View(db.Recipes.Where(x => x.Content.Contains(search) || search == null).ToList());
+        //    }
 
-        }
+        //}
     }
 }
