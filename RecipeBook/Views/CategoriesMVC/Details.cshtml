@@ -28,6 +28,16 @@
         </dd>
 
     </dl>
+    
+    <div>
+        @foreach (var recipe in Model.Recipes)
+        {
+            <p>
+                @recipe.Name 
+            </p>
+        }
+           
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
