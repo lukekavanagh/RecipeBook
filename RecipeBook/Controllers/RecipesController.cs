@@ -13,6 +13,7 @@ using System.Web.Http.Description;
 using System.Web.Mvc;
 using RecipeBook.Models;
 
+
 namespace RecipeBook.Controllers
 {
     public class RecipesController : ApiController
@@ -24,11 +25,11 @@ namespace RecipeBook.Controllers
             db.Configuration.ProxyCreationEnabled = false;
         }
 
-         // GET: Products
-        public ActionResult Index()
-        {
-            return View(db.Recipes.ToList());
-        }
+        //// GET: Recipes
+        //public ActionResult Index()
+        //{
+        //    return View(db.Recipes.ToList());
+        //}
 
         // GET: api/Recipes
         public IQueryable<Recipe> GetRecipes()
@@ -37,7 +38,7 @@ namespace RecipeBook.Controllers
         }
 
         // GET: api/Recipes/5
-        [ResponseType(typeof(Recipe))]
+        [ResponseType(typeof (Recipe))]
         public async Task<IHttpActionResult> GetRecipe(int id)
         {
             Recipe recipe = await db.Recipes.FindAsync(id);
@@ -50,7 +51,7 @@ namespace RecipeBook.Controllers
         }
 
         // PUT: api/Recipes/5
-        [ResponseType(typeof(void))]
+        [ResponseType(typeof (void))]
         public async Task<IHttpActionResult> PutRecipe(int id, Recipe recipe)
         {
             if (!ModelState.IsValid)
@@ -85,7 +86,7 @@ namespace RecipeBook.Controllers
         }
 
         // POST: api/Recipes
-        [ResponseType(typeof(Recipe))]
+        [ResponseType(typeof (Recipe))]
         public async Task<IHttpActionResult> PostRecipe(Recipe recipe)
         {
             if (!ModelState.IsValid)
@@ -96,11 +97,11 @@ namespace RecipeBook.Controllers
             db.Recipes.Add(recipe);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = recipe.Id }, recipe);
+            return CreatedAtRoute("DefaultApi", new {id = recipe.Id}, recipe);
         }
 
         // DELETE: api/Recipes/5
-        [ResponseType(typeof(Recipe))]
+        [ResponseType(typeof (Recipe))]
         public async Task<IHttpActionResult> DeleteRecipe(int id)
         {
             Recipe recipe = await db.Recipes.FindAsync(id);
@@ -128,30 +129,32 @@ namespace RecipeBook.Controllers
         {
             return db.Recipes.Count(e => e.Id == id) > 0;
         }
-
-        // GET: api/RecipesAPI/UpVote/5
-        [System.Web.Http.HttpGet] 
-        public int UpVote(int Id)
-        {
-            var Recipe = db.Recipes.Single(x => x.Id == Id);
-            var points = Recipe.Points;
-            Recipe.Points++;
-            db.Recipes.AddOrUpdate(Recipe);
-            db.SaveChanges();
-            return points;
-        }
-
-        public ActionResult Search(string searchBy, string search)
-        {
-            if (searchBy == "Recipes")
-            {
-                return View(db.Recipes.Where(x => x.Name == search || search == null).ToList());
-            }
-            else
-            {
-                return View(db.Recipes.Where(x => x.Content.Contains(search) || search == null).ToList());
-            }
-
-        }
     }
 }
+
+//        // GET: api/RecipesAPI/UpVote/5
+//        [System.Web.Http.HttpGet]
+//        public int UpVote(int Id)
+//        {
+//            var Recipe = db.Recipes.Single(x => x.Id == Id);
+//            var points = Recipe.Points;
+//            Recipe.Points++;
+//            db.Recipes.AddOrUpdate(Recipe);
+//            db.SaveChanges();
+//            return points;
+//        }
+
+//        public ActionResult Search(string searchBy, string search)
+//        {
+//            if (searchBy == "Recipes")
+//            {
+//                return View(db.Recipes.Where(x => x.Name == search || search == null).ToList());
+//            }
+//            else
+//            {
+//                return View(db.Recipes.Where(x => x.Content.Contains(search) || search == null).ToList());
+//            }
+
+//        }
+//    }
+//}
