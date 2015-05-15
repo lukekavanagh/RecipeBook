@@ -24,6 +24,12 @@ namespace RecipeBook.Controllers
             db.Configuration.ProxyCreationEnabled = false;
         }
 
+         // GET: Products
+        public ActionResult Index()
+        {
+            return View(db.Recipes.ToList());
+        }
+
         // GET: api/Recipes
         public IQueryable<Recipe> GetRecipes()
         {
