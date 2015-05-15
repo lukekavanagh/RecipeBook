@@ -30,6 +30,33 @@ textarea {
 }
 
 
-.col-md-4 h2 {
+.col-md-4 {
     text-align: center;
+}
+
+
+.jumbotron {
+    background-image: url("http://i.dailymail.co.uk/i/pix/2014/04/09/article-0-1A2A745500000578-960_634x420.jpg");
+    background-size: cover;
+    height: 700px;
+}
+
+.navbar {
+    background-color: #D46102;
+}
+
+
+body {
+    background-color: #FFA153;
+}
+
+.wrapper {
+    background-color: white;
+    width: 85%;
+    margin: auto;
+    border: 10px solid #D46102;
+    border-top: none;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    box-shadow: 10px 10px 5px #AD4E00;
 }
