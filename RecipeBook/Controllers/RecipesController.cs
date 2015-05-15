@@ -129,32 +129,31 @@ namespace RecipeBook.Controllers
         {
             return db.Recipes.Count(e => e.Id == id) > 0;
         }
+
+        // GET: api/RecipesAPI/UpVote/5
+        [System.Web.Http.HttpGet]
+        public int UpVote(int Id)
+        {
+            var Recipe = db.Recipes.Single(x => x.Id == Id);
+            var points = Recipe.Points;
+            Recipe.Points++;
+            db.Recipes.AddOrUpdate(Recipe);
+            db.SaveChanges();
+            return points;
+        }
+
+        //    public ActionResult Search(string searchBy, string search)
+        //    {
+        //        if (searchBy == "Recipes")
+        //        {
+        //            return View(db.Recipes.Where(x => x.Name == search || search == null).ToList());
+        //        }
+        //        else
+        //        {
+        //            return View(db.Recipes.Where(x => x.Content.Contains(search) || search == null).ToList());
+        //        }
+
+        //    }
+        //}
     }
 }
-
-//        // GET: api/RecipesAPI/UpVote/5
-//        [System.Web.Http.HttpGet]
-//        public int UpVote(int Id)
-//        {
-//            var Recipe = db.Recipes.Single(x => x.Id == Id);
-//            var points = Recipe.Points;
-//            Recipe.Points++;
-//            db.Recipes.AddOrUpdate(Recipe);
-//            db.SaveChanges();
-//            return points;
-//        }
-
-//        public ActionResult Search(string searchBy, string search)
-//        {
-//            if (searchBy == "Recipes")
-//            {
-//                return View(db.Recipes.Where(x => x.Name == search || search == null).ToList());
-//            }
-//            else
-//            {
-//                return View(db.Recipes.Where(x => x.Content.Contains(search) || search == null).ToList());
-//            }
-
-//        }
-//    }
-//}
