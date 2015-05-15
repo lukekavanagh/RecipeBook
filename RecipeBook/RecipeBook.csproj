@@ -188,9 +188,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CategoriesMVCController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
+    <Compile Include="Controllers\RecipesMVCController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -277,6 +279,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Recipes\Index.cshtml" />
+    <Content Include="Views\RecipesMVC\Create.cshtml" />
+    <Content Include="Views\RecipesMVC\Delete.cshtml" />
+    <Content Include="Views\RecipesMVC\Details.cshtml" />
+    <Content Include="Views\RecipesMVC\Edit.cshtml" />
+    <Content Include="Views\CategoriesMVC\Create.cshtml" />
+    <Content Include="Views\CategoriesMVC\Delete.cshtml" />
+    <Content Include="Views\CategoriesMVC\Details.cshtml" />
+    <Content Include="Views\CategoriesMVC\Edit.cshtml" />
+    <Content Include="Views\CategoriesMVC\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
