@@ -29,18 +29,12 @@ namespace RecipeBook.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Category category = await db.Categories.FindAsync(id);
-            Recipe recipe = await db.Recipes.FindAsync(id);
+            
             if (category == null)
             {
                 return HttpNotFound();
             }
-            if (category == category.Recipes)
-            {
-                return View(recipe);
-            }
-           
-            else
-        
+          
             return View(category);
         }
 
