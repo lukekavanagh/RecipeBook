@@ -33,3 +33,20 @@ textarea {
 .col-md-4 h2 {
     text-align: center;
 }
+
+a.category {
+    display: block;
+    text-align: center;
+    background-color: #337ab7;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid #cccccc;
+}
+
+a.category:hover {
+    background-color: #245580;
+}
